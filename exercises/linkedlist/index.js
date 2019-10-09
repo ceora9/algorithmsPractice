@@ -16,20 +16,21 @@ class LinkedList {
         this.head = new Node(data, this.head);
     };
 
-    //Create a method to iterate over the list and return an integer representing the number of nodes.
-    //Because the LinkedList class only points to the head, set up a counter variable and node variable equal to the head. 
     size() {
         let counter = 0;
-        //Reference directly to the head
         let node = this.head;
-
-        //Set up a while loop to increment the counter at each iteration, using node.next, and reassign the node variable so it keeps looping until the value is null at the tail.
 
         while (node) {
             counter++;
             node = node.next;
         }
         return counter;
+    }
+
+    //Write a method to return the first node of the linked list.
+    getFirst() {
+        //Since the first node is always set to the head, return this.head.
+        return this.head;
     }
 }
 
