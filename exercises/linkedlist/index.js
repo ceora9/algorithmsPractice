@@ -27,10 +27,28 @@ class LinkedList {
         return counter;
     }
 
-    //Write a method to return the first node of the linked list.
+
     getFirst() {
-        //Since the first node is always set to the head, return this.head.
         return this.head;
+    }
+
+    //Write a method to return the last node of the linked list.
+    getLast() {
+        //First check to see if there is a node.
+        if (!this.head) {
+            return null;
+        }
+        //Declare variable for the head.
+        let node = this.head;
+        //Set up while loop to find next node.
+        while (node) {
+            //Use if statement to determine if the next node is null.
+            if (!node.next) {
+                return node;
+            }
+            //Otherwise, keep looping.
+            node = node.next;
+        }
     }
 }
 
