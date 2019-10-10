@@ -32,22 +32,31 @@ class LinkedList {
         return this.head;
     }
 
-    //Write a method to return the last node of the linked list.
     getLast() {
-        //First check to see if there is a node.
         if (!this.head) {
             return null;
         }
-        //Declare variable for the head.
         let node = this.head;
-        //Set up while loop to find next node.
         while (node) {
-            //Use if statement to determine if the next node is null.
             if (!node.next) {
                 return node;
             }
-            //Otherwise, keep looping.
             node = node.next;
+        }
+    }
+
+    //Create an insertLast method.
+    insertLast(data) {
+        //Call the getLast method to locate the last node.
+        const last = this.getLast();
+        //First check that a single node exists.
+        if (last) {
+            //If yes, use last.next to insert a new Node.
+            last.next = new Node(data);
+        }
+        else {
+            //If not, create a new Node at the head using this.head.
+            this.head = new Node(data);
         }
     }
 }
